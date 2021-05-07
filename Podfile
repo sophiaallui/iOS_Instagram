@@ -6,6 +6,7 @@ target 'iOS_Instagram' do
   use_frameworks!
 
   pod 'AlamofireImage'
+  pod 'Parse'
 
   # Pods for iOS_Instagram
 
