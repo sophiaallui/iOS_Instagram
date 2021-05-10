@@ -17,6 +17,7 @@
 		86B936472645A7F000F7CA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B936452645A7F000F7CA86 /* LaunchScreen.storyboard */; };
 		86B936522645A7F100F7CA86 /* iOS_InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B936512645A7F100F7CA86 /* iOS_InstagramTests.swift */; };
 		86B9365D2645A7F100F7CA86 /* iOS_InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B9365C2645A7F100F7CA86 /* iOS_InstagramUITests.swift */; };
+		86E927DB2648F60B00010C6C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E927DA2648F60B00010C6C /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		86B936582645A7F100F7CA86 /* iOS_InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B9365C2645A7F100F7CA86 /* iOS_InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_InstagramUITests.swift; sourceTree = "<group>"; };
 		86B9365E2645A7F100F7CA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86E927DA2648F60B00010C6C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9FBE629C1301869614DFAC1F /* Pods_iOS_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F327ED73D37D6373DA3D5451 /* Pods-iOS_Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Instagram.release.xcconfig"; path = "Target Support Files/Pods-iOS_Instagram/Pods-iOS_Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				86B936482645A7F000F7CA86 /* Info.plist */,
 				86257F172645ABA200BC62CC /* LoginViewController.swift */,
 				86257F1C2645ABB200BC62CC /* FeedViewController.swift */,
+				86E927DA2648F60B00010C6C /* CameraViewController.swift */,
 			);
 			path = iOS_Instagram;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86257F182645ABA200BC62CC /* LoginViewController.swift in Sources */,
+				86E927DB2648F60B00010C6C /* CameraViewController.swift in Sources */,
 				86B9363B2645A7EE00F7CA86 /* AppDelegate.swift in Sources */,
 				86257F1D2645ABB200BC62CC /* FeedViewController.swift in Sources */,
 				86B9363D2645A7EE00F7CA86 /* SceneDelegate.swift in Sources */,
