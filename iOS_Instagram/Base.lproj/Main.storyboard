@@ -93,7 +93,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="417" id="ehP-jN-e1d" customClass="PostCell" customModule="iOS_Instagram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="417" id="ehP-jN-e1d" customClass="PostCell" customModule="iOS_Instagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="417"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ehP-jN-e1d" id="Xg1-Wb-1sq">
@@ -107,24 +107,24 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zb2-vm-UZ5">
-                                                    <rect key="frame" x="8" y="375" width="69" height="18.5"/>
+                                                    <rect key="frame" x="16" y="375" width="69" height="18.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WOW CAPTION" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-yn-XHf">
-                                                    <rect key="frame" x="108" y="375" width="275" height="34"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WOW CAPTION" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-yn-XHf">
+                                                    <rect key="frame" x="93" y="375" width="102" height="18.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="PTt-HS-aJ3" secondAttribute="trailing" constant="8" id="3RT-4h-2Ef"/>
-                                                <constraint firstItem="Zb2-vm-UZ5" firstAttribute="leading" secondItem="Xg1-Wb-1sq" secondAttribute="leading" constant="8" id="CYs-cc-lp7"/>
-                                                <constraint firstItem="nZC-yn-XHf" firstAttribute="leading" secondItem="Zb2-vm-UZ5" secondAttribute="trailing" constant="8" id="EF5-8X-1Jq"/>
-                                                <constraint firstItem="nZC-yn-XHf" firstAttribute="top" secondItem="PTt-HS-aJ3" secondAttribute="bottom" constant="8" id="Z71-4a-6pX"/>
+                                                <constraint firstItem="nZC-yn-XHf" firstAttribute="leading" secondItem="Zb2-vm-UZ5" secondAttribute="trailing" constant="8" id="7Z7-sF-Crw"/>
+                                                <constraint firstItem="Zb2-vm-UZ5" firstAttribute="leading" secondItem="Xg1-Wb-1sq" secondAttribute="leading" constant="16" id="CYs-cc-lp7"/>
+                                                <constraint firstItem="nZC-yn-XHf" firstAttribute="top" secondItem="PTt-HS-aJ3" secondAttribute="bottom" constant="8" id="NIb-iD-haK"/>
                                                 <constraint firstItem="Zb2-vm-UZ5" firstAttribute="top" secondItem="PTt-HS-aJ3" secondAttribute="bottom" constant="8" id="hPp-W4-5a9"/>
                                                 <constraint firstItem="PTt-HS-aJ3" firstAttribute="leading" secondItem="Xg1-Wb-1sq" secondAttribute="leading" constant="8" id="odh-U7-Qca"/>
-                                                <constraint firstAttribute="bottom" secondItem="nZC-yn-XHf" secondAttribute="bottom" constant="8" id="pEZ-cG-2Sv"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nZC-yn-XHf" secondAttribute="bottom" constant="8" id="pEZ-cG-2Sv"/>
                                                 <constraint firstItem="PTt-HS-aJ3" firstAttribute="top" secondItem="Xg1-Wb-1sq" secondAttribute="top" constant="8" id="z5p-yY-Mqj"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -132,6 +132,41 @@
                                             <outlet property="captionLabel" destination="nZC-yn-XHf" id="gZA-GZ-Vp6"/>
                                             <outlet property="postView" destination="PTt-HS-aJ3" id="vFU-dv-ao6"/>
                                             <outlet property="usernameLabel" destination="Zb2-vm-UZ5" id="zAp-vE-EFc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="BH2-ga-yRv" customClass="CommentCell" customModule="iOS_Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="445" width="414" height="33.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BH2-ga-yRv" id="Q35-W7-iEy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idk man, that's sus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uay-kp-2xB">
+                                                    <rect key="frame" x="109" y="8" width="121.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tom from FB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zag-zf-PAn">
+                                                    <rect key="frame" x="16" y="8" width="85" height="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uay-kp-2xB" firstAttribute="leading" secondItem="zag-zf-PAn" secondAttribute="trailing" constant="8" id="FdP-tC-vX9"/>
+                                                <constraint firstItem="zag-zf-PAn" firstAttribute="top" secondItem="Q35-W7-iEy" secondAttribute="top" constant="8" id="KdS-BE-SGJ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uay-kp-2xB" secondAttribute="bottom" constant="8" id="NNR-b6-Ml5"/>
+                                                <constraint firstItem="uay-kp-2xB" firstAttribute="top" secondItem="Q35-W7-iEy" secondAttribute="top" constant="8" id="OFQ-GX-nDW"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zag-zf-PAn" secondAttribute="bottom" constant="8" id="Okj-Ub-Okh"/>
+                                                <constraint firstItem="zag-zf-PAn" firstAttribute="leading" secondItem="Q35-W7-iEy" secondAttribute="leading" constant="16" id="PfL-O6-YGI"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uay-kp-2xB" secondAttribute="trailing" constant="8" id="gfI-GG-xed"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="uay-kp-2xB" id="lr9-5n-J2M"/>
+                                            <outlet property="nameLabel" destination="zag-zf-PAn" id="jH5-xq-zRx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

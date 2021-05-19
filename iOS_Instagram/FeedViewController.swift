@@ -33,7 +33,8 @@ class FeedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         let query = PFQuery(className: "Posts")
         
         // include key
-        query.includeKey("author")
+                                                    // for each comment, get their author
+        query.includeKeys(["author", "comments", "comments.author"])
         query.limit = 20; // last 20
         query.findObjectsInBackground{ (posts, error) in
             // store data
@@ -48,25 +49,74 @@ class FeedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     }
     // These two are required for data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // posts.count + number of comments for ALL posts
+        let post = posts[section]
+        // if the left is nil ?? do [] default value
+        let comments = (post["comments"] as? [PFObject]) ?? []
+        
+        return comments.count + 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        let post = posts[indexPath.section]
+        let comments = (post["comments"] as? [PFObject]) ?? []
+
+        if indexPath.row == 0{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+            let user = post["author"] as! PFUser
+            cell.usernameLabel.text = user.username
+            cell.captionLabel.text = post["caption"] as! String
+            
+            let imageFile = post["image"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.postView.af_setImage(withURL: url)
+            return cell
+
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+            
+            let comment = comments[indexPath.row-1]
+            cell.commentLabel.text = comment["text"] as? String
+            
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            
+            return cell
+        }
         
-        let post = posts[indexPath.row]
-   
-        let user = post["author"] as! PFUser
-        cell.usernameLabel.text = user.username
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let post = posts[indexPath.section]
         
-        cell.captionLabel.text = post["caption"] as! String
+            // common object
+        // PROPERTIES OF "Comments"
+        // auto create the object
+        let comment = PFObject(className: "Comments")
+        comment["text"] = "Random comment"
+        comment["post"] = post
+        comment["author"] = PFUser.current()!
         
-        let imageFile = post["image"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
+        // Relationship
+        // have array of comments, and add the rest to array
+        post.add(comment, forKey: "comments")
         
-        cell.postView.af_setImage(withURL: url)
-        return cell
+        //
+        post.saveInBackground{(success, error) in
+            if success {
+                print("Comment saved")
+            }else{
+                print("error saving comment")
+            }
+        }
+        
     }
     
     @IBAction func onLogoutBtn(_ sender: Any) {
@@ -86,7 +136,6 @@ class FeedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
           }
         
         delegate.window?.rootViewController = loginViewController
-    
     
     }
 
