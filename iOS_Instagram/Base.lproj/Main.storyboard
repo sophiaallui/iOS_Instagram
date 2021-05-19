@@ -107,8 +107,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zb2-vm-UZ5">
-                                                    <rect key="frame" x="8" y="375" width="64" height="18.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="8" y="375" width="69" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WOW CAPTION" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-yn-XHf">
@@ -159,7 +159,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qIG-Oi-glD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bS9-TG-G1f" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="bS9-TG-G1f" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hjn-Ae-Akb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
