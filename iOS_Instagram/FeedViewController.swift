@@ -23,7 +23,7 @@ class FeedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         // refresh again
         super.viewDidAppear(animated)
@@ -69,6 +69,26 @@ class FeedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         return cell
     }
     
+    @IBAction func onLogoutBtn(_ sender: Any) {
+        PFUser.logOut() // clear parse cache
+        
+        //switch back to login screen
+        // grab storyboard/parse xml
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewConrtroller")
+        
+        //let delegate = UIApplication.shared.delegate as! SceneDelegate
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let delegate = windowScene.delegate as? SceneDelegate
+          else {
+            return
+          }
+        
+        delegate.window?.rootViewController = loginViewController
+    
+    
+    }
 
 
     

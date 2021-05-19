@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="iOS_Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewConrtroller" id="BYZ-38-t0r" customClass="LoginViewController" customModule="iOS_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="P4j-bN-IBQ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Vbf-eR-KOU">
+                            <connections>
+                                <action selector="onLogoutBtn:" destination="OvK-OT-Li4" id="7IH-aW-9Mm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="0HR-0E-gaP">
                             <connections>
                                 <segue destination="KHR-JA-pgB" kind="presentation" modalPresentationStyle="fullScreen" id="wuu-ER-ois"/>
